@@ -1,0 +1,11 @@
+<h1><%= @game.name %></h1>
+<p>hosted by: <%= @game.host_name %></p>
+<p><%= @game.datetime %>  |  <%= @game.location %></p>
+<p>Players needed: <%= @game.tilt_amount %></p>
+<p>
+  Players commited: <%= @game.player_count %><br>
+  <% @game.players.each do |player| %>
+    <%= player.name %><br>
+  <% end %>
+</p>
+<em>Game Status: <%= @game.status %></em>
