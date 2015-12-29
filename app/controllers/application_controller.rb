@@ -19,10 +19,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/games/new' do
-    puts params
-    #create and save
-    #Game.create(name: params[], name: params[], name: params[], name: params[])
-    # re route
+    game = Game.create(name: params["title"], datetime: "#{params["date"]} #{params["time"]}", location: params["location"], tilt_amount: params["tilt_amount"], host: params["host_id"])
+    redirect to("/games/#{game.id}")
   end
 
   get '/games/:id' do

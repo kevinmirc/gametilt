@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20151229211633) do
 
   create_table "games", force: :cascade do |t|
-    t.string  "name"
-    t.string  "datetime"
-    t.string  "location"
-    t.integer "tilt_amount"
-    t.integer "host"
+    t.string   "name"
+    t.datetime "datetime"
+    t.string   "location"
+    t.integer  "tilt_amount"
+    t.integer  "host"
   end
 
   create_table "games_players", id: false, force: :cascade do |t|
@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 20151229211633) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
   end
 
 end
