@@ -1,11 +1,27 @@
 <h1><%= @game.name %></h1>
-<p>hosted by: <%= @game.host_name %></p>
-<p><%= @game.datetime %>  |  <%= @game.location %></p>
+
+<p>Hosted by: <%= @game.host_name %></p>
+<p><%= @game.datetime.to_s %>  |  <%= @game.location %></p>
 <p>Players needed: <%= @game.tilt_amount %></p>
 <p>
   Players commited: <%= @game.player_count %><br>
   <% @game.players.each do |player| %>
-    <%= player.name %><br>
+    <%= player.first_name %><br>
   <% end %>
 </p>
 <em>Game Status: <%= @game.status %></em>
+<br><br>
+<p>
+  Invite Players:
+</p>
+<form class="" action="invitations" method="post">
+  <% Player.all.each do |player| %>
+    <input type="checkbox" name="players[]" value="<%= player.id %>"> <%= player.name %> <br>
+  <% end %>
+  <input type="submit" name="send" value="Send!">
+  <input type="hidden" name="game_id" value="<%= @game.id %>">
+</form>
+<br><br>
+<p>
+
+<a href="/games/<%= @game.id %>/edit">Update Event</a>

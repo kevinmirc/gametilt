@@ -1,0 +1,17 @@
+<form class="" action="edit" method="post">
+  Title: <input type="text" name="name" value="<%= @game.name %>"><br>
+  Date: <input type="date" name="date" value="<%= @game.date %>"><br>
+  Time: <input type="time" name="time" value="<%= @game.time %>"><br>
+  Location: <input type="text" name="location" value="<%= @game.location %>"><br>
+  Amount of players needed: <input type="number" name="tilt_amount" value="<%= @game.tilt_amount %>"><br>
+  Host id: <input type="number" name="host_id" value="<%= @game.host %>"><br>
+
+  <input style="background-color:lightgreen;width:79px;" type="submit" name="create" value="Update">
+</form>
+
+<br>
+
+
+<form class="" action="delete" method="post">
+  <input style="background-color:red;width:79px;" type="submit" name="detele" value="Delete Event">
+</form>

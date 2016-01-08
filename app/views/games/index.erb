@@ -1,5 +1,6 @@
 <h1>Games</h1>
-<em><a href="/games/new">Create and event</a></em>
+<em><a href="/games/new">Create a new event</a></em>
+<br><br>
 <% Game.all.each do |game| %>
   <p><a href=<%="games/#{game.id}"%>><%= game.name %></a></p>
 <% end %>

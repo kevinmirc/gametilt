@@ -1,9 +1,20 @@
 class Game < ActiveRecord::Base
   has_many :games_players
   has_many :players, through: :games_players
+  has_many :invitations
+  # has_many :players, through: :invitations
+
 
   def host_name
-    Player.find(self.host).name
+    Player.find(host).first_name + " " + Player.find(self.host).last_name
+  end
+
+  def date
+    datetime
+  end
+
+  def time
+    datetime
   end
 
   def player_count
