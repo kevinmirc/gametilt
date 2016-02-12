@@ -25,9 +25,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/games/invitations' do
-    TestAccountSid = 'ACb94b74589e3833498ebf5ce5cc5e2360'
-    account_sid = 'ACc07569f8b964ae95a93c977edef63c29'
-    auth_token = 'e520bf6d4aa76e935521bcb176c3b479'
+    TestAccountSid = ''
+    account_sid = ''
+    auth_token = ''
 
 
     params[:players].each do |player_id|
